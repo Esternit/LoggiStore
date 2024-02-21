@@ -235,7 +235,7 @@ window.addEventListener('scroll', () => {
 
 
 function openStory(loadingid){
-
+    var ret = 0;
     var Timer = function(callback, delay) {
         var timerId, start, remaining = delay;
     
@@ -243,6 +243,9 @@ function openStory(loadingid){
             window.clearTimeout(timerId);
             timerId = null;
             remaining -= Date.now() - start;
+            console.log(remaining/1000);
+            ret = remaining/1000
+
         };
     
         this.resume = function() {
@@ -265,7 +268,7 @@ function openStory(loadingid){
         stopscroll = 1;
         let all = document.getElementsByClassName("stories");
         let finalid = "loading"+loadingid;
-        let timeid = "timestamp"+loadingid;
+        var timeid = "timestamp"+loadingid;
         for (let step = 0; step < all.length; step++) {
             if (all[step].classList[0] == "stories"){
                 all[step].classList.replace("stories","text-teletype");
@@ -273,12 +276,15 @@ function openStory(loadingid){
         }
         document.getElementById(finalid).classList.replace("text-teletype","stories");
         document.getElementById(timeid).classList.replace("teletype-header","teletype-header-last");
+        document.getElementById(timeid).style.transition="all 15s linear";
+        document.getElementById("cont").style.display = "none";
         document.body.classList.add("blured");
         var timer = new Timer(function() {
             console.log("timer");
             document.getElementsByClassName("stories")[0].classList.replace("stories","text-teletype");
             document.getElementById(timeid).classList.replace("teletype-header-last","teletype-header");
             document.body.classList.remove("blured");
+            document.getElementById("cont").removeAttribute("style");
             stopscroll = 0;
             document.removeEventListener('touchstart', handleTouchStart);
             document.removeEventListener('touchmove', handleTouchMove);
@@ -307,6 +313,7 @@ function openStory(loadingid){
                 timer.resume();
                 document.getElementById(timeid).classList.replace("teletype-header-pause","teletype-header-last");
                 document.getElementById(timeid).removeAttribute("style");
+                document.getElementById(timeid).style.transition="all "+ret.toString()+"s linear";
             }
         }
 
@@ -318,6 +325,8 @@ function openStory(loadingid){
                 document.getElementsByClassName("stories")[0].classList.replace("stories","text-teletype");
                 document.getElementsByClassName("teletype-header-pause")[0].classList.replace("teletype-header-pause","teletype-header");
                 document.body.classList.remove("blured");
+                document.getElementById("cont").removeAttribute("style");
+                document.getElementById(timeid).removeAttribute("style");
                 stopscroll = 0;
                 timer.break();
                 document.removeEventListener('touchstart', handleTouchStart);

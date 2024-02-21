@@ -9,12 +9,10 @@ body{
 	margin: 0;
 	padding: 0;
 	background: rgb(246, 254, 255);
-
 }
 
 .blured > *:not(#loading1,#loading2,#loading3,#loading4){
 	filter: blur(3px);
-
 }
 
 #listing {
@@ -103,6 +101,7 @@ body{
 
 .container {
 	margin: 0px 6px 0px 6px;
+	
 }
 
 .inner {
@@ -498,9 +497,8 @@ a:active {
 
 .text-teletype{
 	position: absolute;
-	width: 10%;
-	height: 10%;
-	background-color: pink;
+	width: 1%;
+	height: 1%;
 	margin-top: 15%;
 	
 	
@@ -539,11 +537,10 @@ a:active {
 .stories{
 	position: absolute;
 	width: 100%;
-	height: 140%;
-	background-color: #fbeec1;
+	height: 100%;
+	background-color: #808080;
 	display: flex;
 	z-index: 3;
-	border-radius: 20px; 
 }
 
 .teletype-header{
@@ -551,8 +548,7 @@ a:active {
 	width: 1%;
 	height: 5px;
 	border-radius: 20px;
-	background-color: white;
-	transition: all 2s linear;
+	background-color: #dcdcdc;
 }
 
 .teletype-header-last{
@@ -560,14 +556,12 @@ a:active {
 	width: 100%;
 	height: 5px;
 	border-radius: 20px;
-	background-color: white;
-	transition: all 15s linear;
+	background-color: #dcdcdc;
 }
 
 .teletype-header-pause{
 	margin-top: 1%;
 	height: 5px;
 	border-radius: 20px;
-	background-color: white;
-	transition: all 15s linear;
+	background-color: #dcdcdc;
 }
