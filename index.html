@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="styles/style.css">
+	<script src="https://telegram.org/js/telegram-web-app.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;800&display=swap');
+	</style>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+	<title>Catalog</title>
+</head>
+
+<body>
+	<div class = "text-teletype" id = "loading1">
+		<div class = "teletype-header" id  = "timestamp3"></div>
+	</div>
+	<div class = "text-teletype" id = "loading2">
+		<div class = "teletype-header" id  = "timestamp3"></div>
+	</div>
+	<div class = "text-teletype" id = "loading3">
+		<div class = "teletype-header" id  = "timestamp3"></div>
+	</div>
+	</div>
+	<div class = "text-teletype" id = "loading4">
+		<div class = "teletype-header" id  = "timestamp4"></div>
+		</div>
+	</div>
+	<div class="container">
+
+
+		<div class="searchcont" id="searcher">
+		</div>
+
+		<div class="link-container">
+			
+			<div class="teletype-info">
+				
+				<div class="teletype-link" onclick="openStory('1')"><img class="teletype-link-image" src="./logo.jpg"></div>
+			</div>
+			<div class="teletype-info">
+				<div href="#" class="teletype-link"  onclick="openStory('2')"><img class="teletype-link-image" src="./logo.jpg"></div>
+			</div>
+			<div class="teletype-info">
+				<div href="search.html" class="teletype-link" onclick="openStory('3')"><img class="teletype-link-image" src="./logo.jpg"></div>
+			</div>
+			<div class="teletype-info">
+				<div href="" class="teletype-link" onclick="openStory('4')"><img class="teletype-link-image" src="./logo.jpg"></div>
+			</div>
+			<div class="teletype-info-text">О нас</div>
+			<div class="teletype-info-text">Доставка</div>
+			<div class="teletype-info-text">FAQ</div>
+			<div class="teletype-info-text">Контакты</div>
+		</div>
+	
+
+	<div id="listing">
+
+	</div>
+
+	<div class="loader" id="ld">
+		<div class="circle"></div>
+		<div class="circle"></div>
+		<div class="circle"></div>
+	</div>
+</div>
+	<script src="scripts/catalog.js"></script>
+	<script src="scripts/postload.js"></script>
+	<script>
+		function func() {
+			console.log('tapped');
+		}
+	</script>
+</body>
+
+</html>
