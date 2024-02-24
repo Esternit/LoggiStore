@@ -64,7 +64,7 @@ body{
 	max-height: inherit;
 
 	border-radius: 50%;
-	background: rgb(33, 187, 221);
+	background: white;
 	box-shadow: 0 0 15px 8px rgba(0, 0, 0, 0.06);
 	transition: all .1s ease-in-out;
 }
@@ -85,9 +85,26 @@ body{
 	border-radius: 50%;
 }
 
-.teletype-link-image {
+.teletype-link-image1 {
 	width: 100%;
 	border-radius: 50%;
+	margin-top: 8%;
+}
+.teletype-link-image2 {
+	width: 100%;
+	border-radius: 50%;
+	margin-top: 8%;
+	height: 90%;
+}
+.teletype-link-image3 {
+	width: 90%;
+	border-radius: 50%;
+	margin-top: 10%;
+}
+.teletype-link-image4 {
+	width: 100%;
+	border-radius: 50%;
+	margin-top: 8%; 
 }
 
 
@@ -162,7 +179,7 @@ body{
 	margin: 5px 5px 5px 5px;
 
 	border: none;
-	background: rgb(33, 187, 221);
+	background: #FECE24;
 	border-radius: 15px;
 	color: #FFFFFF;
 
@@ -488,7 +505,7 @@ a:active {
 .icon-search{
 	width: 100%;
 	height: 100%;
-	color:rgb(33, 187, 221);
+	color:#FECE24;
 }
 .search-btn:active{
 	transform: scale(0.95); 
@@ -549,6 +566,7 @@ a:active {
 	height: 5px;
 	border-radius: 20px;
 	background-color: #dcdcdc;
+	position: absolute;
 }
 
 .teletype-header-last{
@@ -557,6 +575,7 @@ a:active {
 	height: 5px;
 	border-radius: 20px;
 	background-color: #dcdcdc;
+	position: absolute;
 }
 
 .teletype-header-pause{
@@ -564,4 +583,77 @@ a:active {
 	height: 5px;
 	border-radius: 20px;
 	background-color: #dcdcdc;
+	position: absolute;
+}
+
+.teletype-image{
+	height: 100%;
+	width: 100%;
+	position: absolute;
+}
+
+.stories-info2{
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(#FECE24, white);
+}
+.stories-text2{
+	text-decoration: #000000;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 600;
+	font-size: 30px;
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5%;
+}
+.stories-img2{
+	max-width: 100%;
+	position: relative;
+	right: 15%;
+	max-height: 70%;
+}
+
+.stories-info1{
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(#5D24FE, white);
+}
+.stories-text1{
+	color: white;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 600;
+	font-size: 30px;
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5%;
+}
+.stories-img1{
+	max-width: 100%;
+	position: relative;
+	left: 30%;
+	max-height: 70%;
+}
+
+.stories-info4{
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(#25A131, white);
+}
+.stories-text4{
+	color: white;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 600;
+	font-size: 25px;
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5%;
+}
+.stories-img4{
+	max-width: 100%;
+	position: relative;
+	right: 20%;
+	max-height: 70%;
 }

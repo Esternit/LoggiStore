@@ -269,6 +269,8 @@ function openStory(loadingid){
         let all = document.getElementsByClassName("stories");
         let finalid = "loading"+loadingid;
         var timeid = "timestamp"+loadingid;
+        let textid = "story"+loadingid;
+        let storyid="storyouter"+loadingid;
         for (let step = 0; step < all.length; step++) {
             if (all[step].classList[0] == "stories"){
                 all[step].classList.replace("stories","text-teletype");
@@ -278,6 +280,33 @@ function openStory(loadingid){
         document.getElementById(timeid).classList.replace("teletype-header","teletype-header-last");
         document.getElementById(timeid).style.transition="all 15s linear";
         document.getElementById("cont").style.display = "none";
+        document.getElementById(storyid).removeAttribute("style");
+        if(loadingid == "1"){
+            
+            document.getElementById(textid).innerText=`	Мы -  команда логистов, разработчиков, дизайнеров и просто хороших людей.
+
+            Доставлять с Poizon мы начали еще в 2022, чуть позже создали свой одноименный блог на YouTube. 
+
+            Для нас очень важно приносить пользу всем нашим клиентам и делать Вас чуть более счастливыми людьми`;
+        }
+        else if(loadingid == "2"){
+            document.getElementById(textid).innerText=`Сразу после оформления заказа товар выкупается на Poizon в Китае и отправляется на наш склад, откуда позже посылка поедет в Россию. 
+
+            Суммарно доставка до Москвы обычно занимает не более 20-25 дней, чаще приходит даже раньше.
+            
+            А если вдруг нужно привезти что-то срочно, есть варианты экпресс доставки, так, заказ приедет буквально за несколько дней. О такой доставке лучше договориться с менеджером при оформлении заказа.`;
+        }
+        else if(loadingid == "4"){
+            document.getElementById(textid).innerText=`-На Poizon  оригинальные товары?
+            -Да, все товары 100% оригинал, а перед отправкой проводится проверка каждой позиции на оригинальность на складе компании Poizon
+            
+            -Как получить заказ? 
+            -Заказ можно либо забрать на нашем складе складе в Москве, либо отправить с помощью СДЕК в любую точку России и Беларуси
+            
+            -Как долго едет заказ?
+            -В среднем доставка занимает 20-25 дней, часто посылка приезжает еще быстрее. `;
+        }
+        
         document.body.classList.add("blured");
         var timer = new Timer(function() {
             console.log("timer");
@@ -289,6 +318,8 @@ function openStory(loadingid){
             document.removeEventListener('touchstart', handleTouchStart);
             document.removeEventListener('touchmove', handleTouchMove);
             document.removeEventListener('touchend', handleTouchEnd);
+            document.getElementById(textid).innerText = ``;
+            document.getElementById(storyid).style.display="none";
         }, 15000);
 
         document.addEventListener('touchstart', handleTouchStart, false);
@@ -321,7 +352,7 @@ function openStory(loadingid){
             var yUp = evt.touches[0].clientY;
             console.log(yDown,yUp)
             var yDiff = yDown - yUp;
-            if(yDiff > 0){
+            if(yDiff+70 < 0){
                 document.getElementsByClassName("stories")[0].classList.replace("stories","text-teletype");
                 document.getElementsByClassName("teletype-header-pause")[0].classList.replace("teletype-header-pause","teletype-header");
                 document.body.classList.remove("blured");
@@ -332,6 +363,8 @@ function openStory(loadingid){
                 document.removeEventListener('touchstart', handleTouchStart);
                 document.removeEventListener('touchmove', handleTouchMove);
                 document.removeEventListener('touchend', handleTouchEnd);
+                document.getElementById(textid).innerText = ``;
+                document.getElementById(storyid).style.display="none";
             }
         }
 
@@ -347,4 +380,8 @@ function openStory(loadingid){
     
 
     
+}
+
+function openManager(){
+    tg.openTelegramLink("https://t.me/workisthebest");
 }
