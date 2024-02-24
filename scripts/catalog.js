@@ -236,6 +236,7 @@ window.addEventListener('scroll', () => {
 
 function openStory(loadingid){
     var ret = 0;
+    var holding = 0;
     var Timer = function(callback, delay) {
         var timerId, start, remaining = delay;
     
@@ -329,7 +330,9 @@ function openStory(loadingid){
         var yDown = null;
 
         function handleTouchStart(evt){
+            
             if(stopscroll == 1){
+                holding  = 1;
                 const firstTouch = getTouches(evt)[0];
                 yDown = firstTouch.clientY;  
                 let stopwidth = document.getElementById(timeid).getBoundingClientRect().width;
@@ -341,6 +344,7 @@ function openStory(loadingid){
 
         function handleTouchEnd(){
             if(stopscroll == 1){
+                holding = 0;
                 timer.resume();
                 document.getElementById(timeid).classList.replace("teletype-header-pause","teletype-header-last");
                 document.getElementById(timeid).removeAttribute("style");
@@ -352,7 +356,7 @@ function openStory(loadingid){
             var yUp = evt.touches[0].clientY;
             console.log(yDown,yUp)
             var yDiff = yDown - yUp;
-            if(yDiff+70 < 0){
+            if(yDiff+70 < 0 && holding == 0){
                 document.getElementsByClassName("stories")[0].classList.replace("stories","text-teletype");
                 document.getElementsByClassName("teletype-header-pause")[0].classList.replace("teletype-header-pause","teletype-header");
                 document.body.classList.remove("blured");
