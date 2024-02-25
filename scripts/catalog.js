@@ -352,9 +352,9 @@ function openStory(loadingid){
 
         function handleTouchMove(evt){
             var yUp = evt.touches[0].clientY;
-            console.log(yDown,yUp)
             var yDiff = yDown - yUp;
-            if(yDiff+100 > 0){
+            console.log(yDown,yUp,yDiff);
+            if(yDiff-10 > 0){
                 document.getElementsByClassName("stories")[0].classList.replace("stories","text-teletype");
                 document.getElementsByClassName("teletype-header-pause")[0].classList.replace("teletype-header-pause","teletype-header");
                 document.body.classList.remove("blured");

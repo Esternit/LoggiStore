@@ -104,9 +104,9 @@ body {
     font-weight: 600;
     font-size: 0.8em;
 
-    background-color: rgb(33, 187, 221);
+    background-color: #FECE24;
     color: #FFFFFF;
-    border: 1px solid rgb(33, 187, 221);
+    border: 1px solid #FECE24;
     border-radius: 18%;
 }
 
@@ -168,8 +168,8 @@ button:focus {
     width: 40px;
     height: 40px;
     transform: rotate(45deg) translate(30%, 40%);
-    background: rgb(33, 187, 221);
-    box-shadow: 32px -34px 0 5px rgb(33, 187, 221);
+    background: #FECE24;
+    box-shadow: 32px -34px 0 5px #FECE24;
     animation: slide 1s infinite ease-in-out alternate;
   }
   
@@ -181,7 +181,7 @@ button:focus {
     width: 16px;
     height: 16px;
     border-radius: 50%;
-    background: rgb(33, 187, 221);
+    background: #FECE24;
     transform: rotate(0deg);
     transform-origin: 35px 145px;
     animation: rotate 1s infinite ease-in-out;
