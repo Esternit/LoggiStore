@@ -55,7 +55,7 @@ function resetsearch(){
             'Content-type': 'application/json'
         },
         method: 'POST',
-        body: JSON.stringify({ limiter: limit, paging: parseInt(trypage) })
+        body: JSON.stringify({ limiter: limit, paging: parseInt(trypage) , store: "Loggi"})
     })
         .then(response => response.json())
         .then(data => loadSearchHTMLTable(data['data']));
@@ -78,7 +78,7 @@ function searchfunc() {
                 'Content-type': 'application/json'
             },
             method: 'POST',
-            body: JSON.stringify({ limiter: limit, paging: page })
+            body: JSON.stringify({ limiter: limit, paging: page, store: "Loggi" })
         })
             .then(response => response.json())
             .then(data => loadSearchHTMLTable(data['data']));

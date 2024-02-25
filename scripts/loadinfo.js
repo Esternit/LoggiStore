@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
             'Content-type': 'application/json'
         },
         method: 'POST',
-        body: JSON.stringify({ productId: Id })
+        body: JSON.stringify({ productId: Id, store: "Loggi" })
     })
         .then(response => response.json())
         .then(data => loadHTMLTable(data['data']));
