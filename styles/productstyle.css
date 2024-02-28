@@ -81,7 +81,7 @@ body {
 .sizes {
     display: grid;
     grid-auto-flow: column;
-    grid-auto-columns: calc(76px);
+    grid-auto-columns: calc(70px);
 
     overflow-x: scroll;
     scroll-snap-type: x proximity;
@@ -101,13 +101,13 @@ body {
 
     text-align: center;
     font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
+    font-weight: 400;
     font-size: 0.8em;
 
-    background-color: #FECE24;
-    color: #FFFFFF;
-    border: 1px solid #FECE24;
-    border-radius: 18%;
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    border-radius: 5%;
 }
 
 .size:hover {

@@ -12,6 +12,12 @@ if (tg.MainButton.isVisible) {
 let item = {};
 var BackButton = window.Telegram.WebApp.BackButton;
 BackButton.show();
+
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+}
+
+
 BackButton.onClick(function () {
     const Id = new URLSearchParams(window.location.search).get('id');
     const paging = new URLSearchParams(window.location.search).get('page');
@@ -58,12 +64,12 @@ function loadHTMLTable(data) {
     const ROOT_PRODUCTS = document.getElementById('usercard');
 
     const PRICE = document.getElementById('price');
-    PRICE.innerText = outData[0].start_price + " ₽";
+    PRICE.innerText = numberWithCommas(outData[0].start_price) + " ₽";
 
     innerData.forEach(({ name_size, price }) => {
         let inner = document.createElement('div');
         inner.className = 'size';
-        inner.innerHTML = ` ${name_size}<br />${price} ₽`;
+        inner.innerHTML = ` ${name_size}<br />${numberWithCommas(price)} ₽`;
         inner.addEventListener("click", function () {
             // replacing price
             const PRICE = document.getElementById('price');

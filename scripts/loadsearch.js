@@ -13,6 +13,12 @@ BackButton.onClick(function () {
     BackButton.hide();
     tg.MainButton.hide();
 });
+
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+}
+
+
 function loadsearch() {
     BackButton.show();
     const sh = new URLSearchParams(window.location.search).get('search');
@@ -21,7 +27,7 @@ function loadsearch() {
     let test = document.createElement("div");
     test.className = "search";
     test.innerHTML += `<input placeholder="Поиск по названию" id="search-input" class = "wideinputbox"  />`;
-    test.innerHTML +=`<div class = "search-btn" onclick="setsearch()"><ion-icon name="arrow-forward-circle-outline" class = "icon-search"></ion-icon></div>`
+    test.innerHTML +=`<div class = "search-btn" onclick="setsearch()"><ion-icon name="search-outline" class = "icon-search"></ion-icon></div>`
 
     searcher.appendChild(test);
     if (sh != null) {
@@ -99,7 +105,7 @@ function loadSearchHTMLTable(data) {
                     <img src="${img}" alt="" class="img">
                 </div>
                 <div class="itemname">${title}</div>
-                <div class="price">${start_price} ₽</div>
+                <div class="price">${numberWithCommas(start_price)} ₽</div>
                 <div class="btn">Заказать</div>
             </a>
             `;

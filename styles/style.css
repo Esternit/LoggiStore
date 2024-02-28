@@ -137,7 +137,7 @@ body{
 	border-radius: 20px;
 	background-color: white;
 	box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
-
+	border: 1px solid #FECE24;
 	display: flex;
 	flex-direction: column;
 }
@@ -153,12 +153,11 @@ body{
 	margin-left: 4px;
 	margin-right: 4px;
 
-	padding-bottom: 15px;
 
 	text-align: left;
 	font-family: 'Montserrat', sans-serif;
-	font-weight: 400;
-	font-size: 14px;
+	font-size: 24px;
+	font-weight: 500;
 }
 
 .price {
@@ -168,8 +167,8 @@ body{
 
 	text-align: left;
 	font-family: 'Montserrat', sans-serif;
-	font-size: 24px;
-	font-weight: 500;
+	font-weight: 400;
+	font-size: 14px;
 }
 
 .btn {
@@ -500,12 +499,17 @@ a:active {
 	height: 40px;
 	margin-left: 60%;
 	padding: 0;
+	background-color:#FECE24;
 }
 
+
 .icon-search{
-	width: 100%;
-	height: 100%;
-	color:#FECE24;
+	margin-top: 3%;
+	margin-left: 10%;
+	width: 80%;
+	height: 90%;
+	color: white;
+
 }
 .search-btn:active{
 	transform: scale(0.95); 
