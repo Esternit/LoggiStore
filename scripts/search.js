@@ -38,8 +38,8 @@ function loadSearchHTMLTable(data) {
                 <div class="item">
                     <img src="${img}" alt="" class="img">
                 </div>
-                <div class="itemname">${title}</div>
-                <div class="price">${start_price} ₽</div>
+                <div class="itemname">${numberWithCommas(start_price)} ₽</div>
+                <div class="price">${title}</div>
                 <div class="btn">Заказать</div>
             </a>
             `;
