@@ -82,7 +82,11 @@ function loadHTMLTable(data) {
                 size_name: name_size,
                 id: outData[0]["spuId"],
                 img: outData[0]["img"],
-                article: outData[0]["article"]
+                article: outData[0]["article"],
+                user_id: window.Telegram.WebApp.initDataUnsafe.user.id,
+                user_name: window.Telegram.WebApp.initDataUnsafe.user.username,
+                user_first: window.Telegram.WebApp.initDataUnsafe.user.first_name,
+                store: "Loggi"
             });
             tg.MainButton.setText("Перейти в чат с менеджером");
             tg.MainButton.show();
@@ -145,6 +149,14 @@ function moveSlideByTouch(event) {
 
 Telegram.WebApp.onEvent("mainButtonClicked", function () {
     tg.sendData(item);
+    fetch('https://rmstore-api.onrender.com/sendMessage', {
+        headers: {
+            'Content-type': 'application/json'
+        },
+        method: 'POST',
+        body: item
+    })
+    tg.close();
 });
 
 function test() {
